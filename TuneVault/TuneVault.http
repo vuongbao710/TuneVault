@@ -1,0 +1,161 @@
+@baseUrl = http://localhost:5080
+@token = {{login.response.body.data.token}}
+@aliceToken = {{loginAlice.response.body.data.token}}
+@bobToken = {{loginBob.response.body.data.token}}
+@mediaId = {{mediaList.response.body.data[0].id}}
+@bobUserId = {{loginBob.response.body.data.userId}}
+
+### Auth
+# @name register
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "test@demo.com",
+  "password": "Demo@123",
+  "displayName": "Test User"
+}
+
+###
+# @name loginAlice
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "alice@demo.com",
+  "password": "Demo@123"
+}
+
+###
+# @name loginBob
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "bob@demo.com",
+  "password": "Demo@123"
+}
+
+### Profile
+###
+GET {{baseUrl}}/api/profile
+Authorization: Bearer {{aliceToken}}
+
+###
+PUT {{baseUrl}}/api/profile
+Authorization: Bearer {{aliceToken}}
+Content-Type: application/json
+
+{
+  "displayName": "Alice Nguyen",
+  "bio": "Music lover",
+  "avatarUrl": null
+}
+
+### Media
+###
+# @name mediaList
+GET {{baseUrl}}/api/media
+
+###
+GET {{baseUrl}}/api/media/{{mediaId}}
+
+###
+GET {{baseUrl}}/api/media/{{mediaId}}/stream
+
+###
+# Upload example (replace path to a local file)
+# POST {{baseUrl}}/api/media/upload
+# Authorization: Bearer {{aliceToken}}
+# Content-Type: multipart/form-data; boundary=boundary
+#
+# --boundary
+# Content-Disposition: form-data; name="title"
+#
+# My Song
+# --boundary
+# Content-Disposition: form-data; name="artist"
+#
+# Me
+# --boundary
+# Content-Disposition: form-data; name="genre"
+#
+# Pop
+# --boundary
+# Content-Disposition: form-data; name="type"
+#
+# Audio
+# --boundary
+# Content-Disposition: form-data; name="durationSeconds"
+#
+# 180
+# --boundary
+# Content-Disposition: form-data; name="file"; filename="demo.wav"
+# Content-Type: audio/wav
+#
+# < ./demo.wav
+# --boundary--
+
+### Playlists
+###
+GET {{baseUrl}}/api/playlists
+
+###
+POST {{baseUrl}}/api/playlists
+Authorization: Bearer {{aliceToken}}
+Content-Type: application/json
+
+{
+  "name": "My Mix",
+  "description": "Demo playlist",
+  "isPublic": true
+}
+
+### Search
+###
+GET {{baseUrl}}/api/search?q=neon&page=1&pageSize=10
+
+### Share + Notify flow
+###
+POST {{baseUrl}}/api/shares
+Authorization: Bearer {{aliceToken}}
+Content-Type: application/json
+
+{
+  "receiverUserId": "{{bobUserId}}",
+  "mediaItemId": "{{mediaId}}",
+  "playlistId": null
+}
+
+###
+GET {{baseUrl}}/api/shares/with-me
+Authorization: Bearer {{bobToken}}
+
+###
+GET {{baseUrl}}/api/shares/by-me
+Authorization: Bearer {{aliceToken}}
+
+###
+GET {{baseUrl}}/api/notifications
+Authorization: Bearer {{bobToken}}
+
+###
+PUT {{baseUrl}}/api/notifications/read-all
+Authorization: Bearer {{bobToken}}
+
+### Favorites & History
+###
+POST {{baseUrl}}/api/favorites/{{mediaId}}/toggle
+Authorization: Bearer {{aliceToken}}
+
+###
+GET {{baseUrl}}/api/favorites
+Authorization: Bearer {{aliceToken}}
+
+###
+POST {{baseUrl}}/api/history/{{mediaId}}
+Authorization: Bearer {{aliceToken}}
+
+###
+GET {{baseUrl}}/api/history
+Authorization: Bearer {{aliceToken}}

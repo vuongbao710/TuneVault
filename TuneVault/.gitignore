@@ -1,0 +1,16 @@
+# Build output
+bin/
+obj/
+node_modules/
+dist/
+
+# IDE
+.vs/
+.idea/
+
+# User secrets
+appsettings.Development.local.json
+
+# Media uploads (keep seed folder structure)
+backend/TuneVault.API/wwwroot/media/*
+!backend/TuneVault.API/wwwroot/media/.gitkeep
