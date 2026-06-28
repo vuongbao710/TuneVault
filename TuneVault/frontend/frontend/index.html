@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TuneVault — Demo (chia file)</title>
+
+<!-- React + ReactDOM (UMD, không cần build) -->
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<!-- Babel để trình duyệt tự dịch JSX ngay khi chạy (không cần Vite/webpack) -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="./tailwind.config.js"></script>
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="bg-spotify-black text-white">
+<div id="root"></div>
+
+<!-- ====================================================================
+     TẤT CẢ CODE ĐÃ ĐƯỢC CHIA THÀNH NHIỀU FILE NHỎ TRONG THƯ MỤC NÀY
+     (mỗi file 1 class/component/page/data riêng), KHÔNG CẦN BACKEND,
+     KHÔNG CẦN npm install. Chỉ cần mở file này bằng "Live Server"
+     (VS Code) hoặc 1 static server bất kỳ — KHÔNG mở trực tiếp bằng
+     double-click vì <script type="module">/fetch cần chạy qua http://.
+
+     Thứ tự load dưới đây RẤT QUAN TRỌNG vì các file dùng class/biến
+     toàn cục của nhau (không có import/export, giống bản gốc 1-file):
+       1) MODELS      - Song, Playlist, User, MediaPlayer (+ singleton)
+       2) DATA         - mock bài hát, mock playlist, mock thông báo
+       3) COMPONENTS   - Sidebar, TopBar, PlayerBar, RightPanel...
+       4) PAGES        - Home, Search, PlaylistDetail, Login...
+       5) APP          - ghép tất cả lại + render ra #root
+     ==================================================================== -->
+
+<!-- 1) MODELS -->
+<script type="text/babel" data-presets="react" src="./models/Song.js"></script>
+<script type="text/babel" data-presets="react" src="./models/Playlist.js"></script>
+<script type="text/babel" data-presets="react" src="./models/User.js"></script>
+<script type="text/babel" data-presets="react" src="./models/MediaPlayer.js"></script>
+
+<!-- 2) DATA -->
+<script type="text/babel" data-presets="react" src="./data/mockSongs.js"></script>
+<script type="text/babel" data-presets="react" src="./data/mockPlaylists.js"></script>
+
+<!-- 3) COMPONENTS -->
+<script type="text/babel" data-presets="react" src="./components/formatTime.js"></script>
+<script type="text/babel" data-presets="react" src="./components/Sidebar.jsx"></script>
+<script type="text/babel" data-presets="react" src="./components/TopBar.jsx"></script>
+<script type="text/babel" data-presets="react" src="./components/MediaSurface.jsx"></script>
+<script type="text/babel" data-presets="react" src="./components/PlayerBar.jsx"></script>
+<script type="text/babel" data-presets="react" src="./components/RightPanel.jsx"></script>
+<script type="text/babel" data-presets="react" src="./components/SongRow.jsx"></script>
+<script type="text/babel" data-presets="react" src="./components/SongCard.jsx"></script>
+
+<!-- 4) PAGES -->
+<script type="text/babel" data-presets="react" src="./pages/HomePage.jsx"></script>
+<script type="text/babel" data-presets="react" src="./pages/PlaylistsPage.jsx"></script>
+<script type="text/babel" data-presets="react" src="./pages/PlaylistDetailPage.jsx"></script>
+<script type="text/babel" data-presets="react" src="./pages/SearchPage.jsx"></script>
+<script type="text/babel" data-presets="react" src="./pages/ProfilePage.jsx"></script>
+<script type="text/babel" data-presets="react" src="./pages/LoginPage.jsx"></script>
+
+<!-- 5) APP (phải load CUỐI CÙNG vì nó dùng tất cả phần trên) -->
+<script type="text/babel" data-presets="react" src="./App.jsx"></script>
+
+</body>
+</html>

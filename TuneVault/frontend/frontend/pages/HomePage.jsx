@@ -1,0 +1,14 @@
+/* ============================================================
+   PAGE: HomePage
+   Trang chủ - hiển thị các playlist gợi ý.
+   ============================================================ */
+function HomePage({ playlists, onOpenPlaylist }) {
+  return (
+    <div className="flex flex-col gap-6">
+      <h1 className="text-2xl font-bold text-white">Playlist gợi ý cho bạn</h1>
+      <div className="flex flex-wrap gap-4">
+        {playlists.map((p) => <SongCard key={p.id} playlist={p} onOpen={onOpenPlaylist} />)}
+      </div>
+    </div>
+  );
+}
