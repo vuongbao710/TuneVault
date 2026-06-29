@@ -7,13 +7,12 @@ function App() {
   const [notifications, setNotifications] = React.useState(mockNotificationsSeed);
   const playlists = React.useMemo(() => buildPlaylists(), []);
 
-  // Đăng ký lắng nghe MediaPlayer (Observer pattern) -> re-render khi trạng thái đổi.
+
   React.useEffect(() => {
     const unsubscribe = mediaPlayer.subscribe(setPlayerState);
     return unsubscribe;
   }, []);
 
-  // Giả lập 1 thông báo real-time đến sau 8 giây (thay cho SignalR thật).
   React.useEffect(() => {
     if (!currentUser) return;
     const timer = setTimeout(() => {

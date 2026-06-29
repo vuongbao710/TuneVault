@@ -18,23 +18,7 @@
 <body class="bg-spotify-black text-white">
 <div id="root"></div>
 
-<!-- ====================================================================
-     TẤT CẢ CODE ĐÃ ĐƯỢC CHIA THÀNH NHIỀU FILE NHỎ TRONG THƯ MỤC NÀY
-     (mỗi file 1 class/component/page/data riêng), KHÔNG CẦN BACKEND,
-     KHÔNG CẦN npm install. Chỉ cần mở file này bằng "Live Server"
-     (VS Code) hoặc 1 static server bất kỳ — KHÔNG mở trực tiếp bằng
-     double-click vì <script type="module">/fetch cần chạy qua http://.
 
-     Thứ tự load dưới đây RẤT QUAN TRỌNG vì các file dùng class/biến
-     toàn cục của nhau (không có import/export, giống bản gốc 1-file):
-       1) MODELS      - Song, Playlist, User, MediaPlayer (+ singleton)
-       2) DATA         - mock bài hát, mock playlist, mock thông báo
-       3) COMPONENTS   - Sidebar, TopBar, PlayerBar, RightPanel...
-       4) PAGES        - Home, Search, PlaylistDetail, Login...
-       5) APP          - ghép tất cả lại + render ra #root
-     ==================================================================== -->
-
-<!-- 1) MODELS -->
 <script type="text/babel" data-presets="react" src="./models/Song.js"></script>
 <script type="text/babel" data-presets="react" src="./models/Playlist.js"></script>
 <script type="text/babel" data-presets="react" src="./models/User.js"></script>
@@ -54,7 +38,7 @@
 <script type="text/babel" data-presets="react" src="./components/SongRow.jsx"></script>
 <script type="text/babel" data-presets="react" src="./components/SongCard.jsx"></script>
 
-<!-- 4) PAGES -->
+
 <script type="text/babel" data-presets="react" src="./pages/HomePage.jsx"></script>
 <script type="text/babel" data-presets="react" src="./pages/PlaylistsPage.jsx"></script>
 <script type="text/babel" data-presets="react" src="./pages/PlaylistDetailPage.jsx"></script>
@@ -62,7 +46,7 @@
 <script type="text/babel" data-presets="react" src="./pages/ProfilePage.jsx"></script>
 <script type="text/babel" data-presets="react" src="./pages/LoginPage.jsx"></script>
 
-<!-- 5) APP (phải load CUỐI CÙNG vì nó dùng tất cả phần trên) -->
+
 <script type="text/babel" data-presets="react" src="./App.jsx"></script>
 
 </body>
