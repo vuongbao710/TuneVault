@@ -1,7 +1,4 @@
-/* ============================================================
-   COMPONENT: TopBar
-   Thanh trên cùng: ô tìm kiếm + chuông thông báo + nút đăng xuất.
-   ============================================================ */
+
 function TopBar({ currentUser, onLogout, onSearch, unreadCount }) {
   const [keyword, setKeyword] = React.useState('');
   return (

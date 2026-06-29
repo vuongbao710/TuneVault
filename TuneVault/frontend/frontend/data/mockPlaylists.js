@@ -1,8 +1,4 @@
-/* ============================================================
-   MOCK DATA: Playlist mẫu + Thông báo mẫu
-   Yêu cầu: models/Playlist.js và data/mockSongs.js phải được
-   load TRƯỚC file này.
-   ============================================================ */
+
 function buildPlaylists() {
   return [
     { id: 'p1', name: 'Top Hits Việt', description: 'Những bài nghe nhiều nhất', songs: [mockSongsPool[0], mockSongsPool[1], mockSongsPool[2]] },

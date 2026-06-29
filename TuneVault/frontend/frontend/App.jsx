@@ -1,12 +1,4 @@
-/* ============================================================
-   APP (component gốc)
-   Ghép tất cả page/component lại với nhau, quản lý:
-   - state đăng nhập (currentUser)
-   - state điều hướng trang (view)
-   - state từ khoá tìm kiếm
-   - đăng ký lắng nghe mediaPlayer (Observer pattern)
-   - danh sách thông báo (notifications)
-   ============================================================ */
+
 function App() {
   const [currentUser, setCurrentUser] = React.useState(null);
   const [view, setView] = React.useState({ page: 'home' });

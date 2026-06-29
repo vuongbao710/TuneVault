@@ -1,9 +1,4 @@
-/* ============================================================
-   MOCK DATA: Danh sách bài hát mẫu
-   Đứng thay cho việc gọi Backend thật (ASP.NET Core).
-   Audio mẫu lấy từ SoundHelix (file test công khai, ai cũng dùng được).
-   Video mẫu lấy từ thư viện video CC0 chính thức của MDN (Mozilla).
-   ============================================================ */
+
 const mockSongsPool = [
   { id: 's1', title: 'Hoàng Hôn Phố Cổ', artist: 'Mai Lan', album: 'Lofi Việt', durationInSeconds: 222, mediaType: 'audio', mediaUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' },
   { id: 's2', title: 'Sóng Vỗ Bờ Xa', artist: 'Tuấn Ngọc', album: 'Biển Nhớ', durationInSeconds: 257, mediaType: 'audio', mediaUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3' },

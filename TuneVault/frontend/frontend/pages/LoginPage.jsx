@@ -1,8 +1,4 @@
-/* ============================================================
-   PAGE: LoginPage
-   Trang đăng nhập. Bản demo không có Backend thật nên chấp nhận
-   mọi email/mật khẩu.
-   ============================================================ */
+
 function LoginPage({ onLogin }) {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');

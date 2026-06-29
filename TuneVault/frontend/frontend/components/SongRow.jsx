@@ -1,9 +1,4 @@
-/* ============================================================
-   COMPONENT: SongRow
-   1 dòng bài hát trong danh sách (dùng trong PlaylistDetailPage,
-   SearchPage). Click để phát; nếu đang là bài hiện tại thì
-   click sẽ toggle play/pause.
-   ============================================================ */
+
 function SongRow({ song, index, queue, currentSong, isPlaying }) {
   const isCurrent = currentSong && currentSong.id === song.id;
   function handleClick() {

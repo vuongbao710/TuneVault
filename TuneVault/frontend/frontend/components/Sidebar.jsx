@@ -1,7 +1,4 @@
-/* ============================================================
-   COMPONENT: Sidebar
-   Menu điều hướng bên trái (Trang chủ, Tìm kiếm, Playlist, Hồ sơ).
-   ============================================================ */
+
 function Sidebar({ currentView, onNavigate }) {
   const items = [
     { key: 'home', label: 'Trang chủ', icon: '🏠' },

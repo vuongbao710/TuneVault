@@ -1,7 +1,4 @@
-/* ============================================================
-   CẤU HÌNH TAILWIND
-   Định nghĩa bảng màu theo theme Spotify (đen/xanh) dùng xuyên suốt app.
-   ============================================================ */
+
 tailwind.config = {
   theme: {
     extend: {

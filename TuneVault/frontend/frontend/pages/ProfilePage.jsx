@@ -1,7 +1,4 @@
-/* ============================================================
-   PAGE: ProfilePage
-   Trang hồ sơ người dùng + danh sách thông báo gần đây.
-   ============================================================ */
+
 function ProfilePage({ currentUser, notifications, onMarkAllRead }) {
   return (
     <div className="flex flex-col gap-8">

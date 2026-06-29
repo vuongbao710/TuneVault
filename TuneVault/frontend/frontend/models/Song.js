@@ -1,7 +1,4 @@
-/* ============================================================
-   MODEL: Song
-   Đại diện cho 1 bài hát (hoặc 1 video), gồm dữ liệu + hành vi.
-   ============================================================ */
+
 class Song {
   constructor(data) {
     this.id = data.id;

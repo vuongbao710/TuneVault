@@ -1,12 +1,4 @@
-/* ============================================================
-   MODEL: MediaPlayer
-   "Lõi" OOP của toàn app.
-   - Encapsulation: giấu hết thẻ <video> + logic play/pause bên trong class.
-   - Observer pattern: component React "đăng ký" (subscribe) để nhận trạng
-     thái mới mỗi khi nó thay đổi, thay vì tự quản lý thẻ <video>.
-   - Singleton: toàn app chỉ tạo DUY NHẤT 1 instance (biến `mediaPlayer`
-     ở cuối file này), được dùng lại ở mọi component/page khác.
-   ============================================================ */
+
 class MediaPlayer {
   constructor() {
     this.element = document.createElement('video'); // 1 thẻ <video> dùng cho cả audio & video

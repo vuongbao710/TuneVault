@@ -1,7 +1,4 @@
-/* ============================================================
-   COMPONENT: RightPanel
-   Panel bên phải hiển thị chi tiết bài hát đang phát.
-   ============================================================ */
+
 function RightPanel({ currentSong }) {
   if (!currentSong) {
     return (

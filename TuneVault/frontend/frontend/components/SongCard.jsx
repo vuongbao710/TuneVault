@@ -1,8 +1,4 @@
-/* ============================================================
-   COMPONENT: SongCard
-   Thẻ playlist hình vuông (dùng trong HomePage, PlaylistsPage).
-   Tên file giữ theo bản gốc, dù thực chất hiển thị 1 Playlist.
-   ============================================================ */
+
 function SongCard({ playlist, onOpen }) {
   return (
     <button onClick={() => onOpen(playlist.id)} className="w-40 flex-shrink-0 rounded-md bg-spotify-dark p-3 text-left transition-colors hover:bg-spotify-gray">

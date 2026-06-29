@@ -1,7 +1,4 @@
-/* ============================================================
-   PAGE: PlaylistsPage
-   Trang danh sách tất cả playlist của người dùng.
-   ============================================================ */
+
 function PlaylistsPage({ playlists, onOpenPlaylist }) {
   return (
     <div className="flex flex-col gap-6">

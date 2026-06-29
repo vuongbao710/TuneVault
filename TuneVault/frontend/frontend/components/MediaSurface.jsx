@@ -1,8 +1,4 @@
-/* ============================================================
-   COMPONENT: MediaSurface
-   Gắn thẻ <video> thật (lấy từ mediaPlayer.getElement()) vào DOM
-   tại vị trí component này render. Ẩn nếu là audio, hiện nếu là video.
-   ============================================================ */
+
 function MediaSurface({ isVideo }) {
   const containerRef = React.useRef(null);
   React.useEffect(() => {

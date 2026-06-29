@@ -1,7 +1,4 @@
-/* ============================================================
-   PAGE: HomePage
-   Trang chủ - hiển thị các playlist gợi ý.
-   ============================================================ */
+
 function HomePage({ playlists, onOpenPlaylist }) {
   return (
     <div className="flex flex-col gap-6">

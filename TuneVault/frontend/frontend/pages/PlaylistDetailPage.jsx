@@ -1,7 +1,4 @@
-/* ============================================================
-   PAGE: PlaylistDetailPage
-   Trang chi tiết 1 playlist: nút "Phát tất cả" + danh sách bài hát.
-   ============================================================ */
+
 function PlaylistDetailPage({ playlist, playerState }) {
   if (!playlist) return <p className="text-spotify-light">Không tìm thấy playlist.</p>;
   return (

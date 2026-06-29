@@ -1,9 +1,4 @@
-/* ============================================================
-   COMPONENT: PlayerBar
-   Thanh phát nhạc cố định ở dưới cùng: nút play/pause, prev/next,
-   thanh tiến trình (seek), thanh âm lượng.
-   Yêu cầu: MediaSurface.jsx và formatTime.js phải được load trước.
-   ============================================================ */
+
 function PlayerBar({ player }) {
   const { currentSong, isPlaying, currentTime, volume } = player;
 

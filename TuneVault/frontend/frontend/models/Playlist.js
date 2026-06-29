@@ -1,8 +1,4 @@
-/* ============================================================
-   MODEL: Playlist
-   "Có" nhiều Song bên trong (composition - quan hệ has-many).
-   Yêu cầu: file Song.js phải được load TRƯỚC file này.
-   ============================================================ */
+
 class Playlist {
   constructor(data) {
     this.id = data.id;

@@ -1,8 +1,4 @@
-/* ============================================================
-   PAGE: SearchPage
-   Trang tìm kiếm bài hát theo tên hoặc ca sĩ (lọc trên mockSongsPool).
-   Yêu cầu: data/mockSongs.js phải được load trước.
-   ============================================================ */
+
 function SearchPage({ keyword, playerState }) {
   const results = React.useMemo(() => {
     if (!keyword.trim()) return [];
